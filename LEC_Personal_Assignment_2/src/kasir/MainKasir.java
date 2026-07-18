@@ -10,7 +10,7 @@ public class MainKasir {
         int pilihan;
 
         do {
-            System.out.println("\n=== SISTEM KASIR TOKO ===");
+            System.out.println("=== SISTEM KASIR TOKO ===");
             System.out.println("1. Tambah Antrian");
             System.out.println("2. Layani Pelanggan");
             System.out.println("3. Tampilkan Antrian");
@@ -24,6 +24,7 @@ public class MainKasir {
             }
             pilihan = scanner.nextInt();
             scanner.nextLine(); // buang newline
+            System.out.println();
 
             switch (pilihan) {
                 case 1:
@@ -34,6 +35,7 @@ public class MainKasir {
                     System.out.print("Masukkan Total Belanja: ");
                     double total = Double.parseDouble(scanner.nextLine());
                     antrian.enqueue(noAntrian, nama, total);
+                    System.out.println();
                     break;
 
                 case 2:
@@ -43,14 +45,17 @@ public class MainKasir {
                                 " (" + dilayani.namaPelanggan + ")");
                         riwayat.push(dilayani);
                     }
+                    System.out.println();
                     break;
 
                 case 3:
                     antrian.tampilkanAntrian();
+                    System.out.println();
                     break;
 
                 case 4:
                     riwayat.tampilkanRiwayat();
+                    System.out.println();
                     break;
 
                 case 5:
@@ -59,6 +64,7 @@ public class MainKasir {
 
                 default:
                     System.out.println("Menu tidak valid, silakan coba lagi.");
+                    System.out.println();
             }
         } while (pilihan != 5);
 
