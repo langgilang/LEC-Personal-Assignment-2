@@ -9,7 +9,7 @@ public class MainBuku {
         int pilihan;
 
         do {
-            System.out.println("\n===== SISTEM DATA BUKU =====");
+            System.out.println("===== SISTEM DATA BUKU =====");
             System.out.println("1. Tambah Buku");
             System.out.println("2. Hapus Buku");
             System.out.println("3. Cari Buku");
@@ -23,6 +23,7 @@ public class MainBuku {
             }
             pilihan = scanner.nextInt();
             scanner.nextLine(); // buang newline
+            System.out.println();
 
             switch (pilihan) {
                 case 1:
@@ -33,20 +34,24 @@ public class MainBuku {
                     System.out.print("Masukkan Penulis: ");
                     String penulis = scanner.nextLine();
                     daftarBuku.tambahBuku(kode, judul, penulis);
+                    System.out.println();
                     break;
 
                 case 2:
                     daftarBuku.hapusBuku();
+                    System.out.println();
                     break;
 
                 case 3:
                     System.out.print("Masukkan Kode Buku: ");
                     String cariKode = scanner.nextLine();
                     daftarBuku.cariBuku(cariKode);
+                    System.out.println();
                     break;
 
                 case 4:
                     daftarBuku.tampilkanSemuaBuku();
+                    System.out.println();
                     break;
 
                 case 5:
@@ -55,6 +60,7 @@ public class MainBuku {
 
                 default:
                     System.out.println("Menu tidak valid, silakan coba lagi.");
+                    System.out.println();
             }
         } while (pilihan != 5);
 
